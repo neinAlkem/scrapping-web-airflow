@@ -1,0 +1,29 @@
+[2025-03-01T10:03:25.691+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-01T10:03:25.726+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_scrapper_pipeline.insert_csv manual__2025-03-01T09:51:58.576691+00:00 [queued]>
+[2025-03-01T10:03:25.741+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_scrapper_pipeline.insert_csv manual__2025-03-01T09:51:58.576691+00:00 [queued]>
+[2025-03-01T10:03:25.742+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-03-01T10:03:25.759+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): insert_csv> on 2025-03-01 09:51:58.576691+00:00
+[2025-03-01T10:03:25.771+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=990) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-03-01T10:03:25.773+0000] {standard_task_runner.py:72} INFO - Started process 993 to run task
+[2025-03-01T10:03:25.773+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_scrapper_pipeline', 'insert_csv', 'manual__2025-03-01T09:51:58.576691+00:00', '--job-id', '228', '--raw', '--subdir', 'DAGS_FOLDER/etl_dags.py', '--cfg-path', '/tmp/tmplb7090bp']
+[2025-03-01T10:03:25.774+0000] {standard_task_runner.py:105} INFO - Job 228: Subtask insert_csv
+[2025-03-01T10:03:25.834+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_scrapper_pipeline.insert_csv manual__2025-03-01T09:51:58.576691+00:00 [running]> on host 18f96a44278a
+[2025-03-01T10:03:25.978+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_scrapper_pipeline' AIRFLOW_CTX_TASK_ID='insert_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-03-01T09:51:58.576691+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-01T09:51:58.576691+00:00'
+[2025-03-01T10:03:25.980+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-01T10:03:25.981+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-01T10:03:25.982+0000] {logging_mixin.py:190} INFO - Current task name:insert_csv state:running start_date:2025-03-01 10:03:25.727745+00:00
+[2025-03-01T10:03:25.982+0000] {logging_mixin.py:190} INFO - Dag name:etl_scrapper_pipeline and current dag run status:running
+[2025-03-01T10:03:25.983+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-01T10:03:26.023+0000] {logging_mixin.py:190} INFO - Data berhasil dimasukkan ke PostgreSQL.
+[2025-03-01T10:03:26.024+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-01T10:03:26.039+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-01T10:03:26.040+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=etl_scrapper_pipeline, task_id=insert_csv, run_id=manual__2025-03-01T09:51:58.576691+00:00, execution_date=20250301T095158, start_date=20250301T100325, end_date=20250301T100326
+[2025-03-01T10:03:26.071+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-01T10:03:26.072+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-01T10:03:26.073+0000] {logging_mixin.py:190} INFO - Dag name:etl_scrapper_pipeline queued_at:2025-03-01 09:51:58.605749+00:00
+[2025-03-01T10:03:26.073+0000] {logging_mixin.py:190} INFO - Task hostname:18f96a44278a operator:PythonOperator
+[2025-03-01T10:03:26.110+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-01T10:03:26.133+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-01T10:03:26.135+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
