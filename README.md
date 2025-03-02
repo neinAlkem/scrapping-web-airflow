@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AMAZON WEB SCRAPPING APPLICATION WITH AIRFLOW
 
 !['Architeture Image'](assets/Archicteture.png)
@@ -29,3 +30,6 @@ For Full Dags Documentation, Check : [`Dags`](dags\etl_dags.py)
 python -m venv .venv
 .venv/Scripts/activate
 ```
+=======
+# WEB SCRAPPING PIPELINE WITH AIRFLOW
+>>>>>>> ca5f5de48c0e9d39f2e4b00c42c3ab2a6a77320b
