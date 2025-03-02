@@ -78,6 +78,7 @@ Docker Compose up --build
 ## Dags Flow and Database
 
 `Dags` `Extact Data -> Wait Raw Data -> Cleaned Data -> Wait Clean Data -> Load to PostgreSQL`
+
 ![Dags Architecture](assets/Dags_Architecture.png)
 
 `PostgreSQL Database`
