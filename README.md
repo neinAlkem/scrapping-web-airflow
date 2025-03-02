@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # AMAZON WEB SCRAPPING APPLICATION WITH AIRFLOW
 
 !['Architeture Image'](assets/Archicteture.png)
@@ -30,6 +29,57 @@ For Full Dags Documentation, Check : [`Dags`](dags\etl_dags.py)
 python -m venv .venv
 .venv/Scripts/activate
 ```
-=======
-# WEB SCRAPPING PIPELINE WITH AIRFLOW
->>>>>>> ca5f5de48c0e9d39f2e4b00c42c3ab2a6a77320b
+
+`Create Requirements.txt`
+
+```text
+apache-airflow
+apache-airflow-providers-postgres
+pandas
+bs4
+requests
+selenium
+psycopg2-binary
+sqlalchemy
+```
+
+`Create Dockerfile`
+
+```python
+FROM apache/airflow:2.10.5
+
+COPY requirements.txt /requirements.txt
+
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r /requirements.txt
+```
+
+`Inisiate Airflow with Extends`
+
+```bash
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.10.5/docker-compose.yaml'
+
+mkdir -p ./dags ./logs ./plugins ./config
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+AIRFLOW_UID=50000
+
+docker compose up airflow-init
+```
+
+`Create ETL program within DAGS file`
+
+`Run`
+
+```bash
+Docker Compose up --build
+```
+
+## Dags Flow and Database
+
+`Dags` `Extact Data -> Wait Raw Data -> Cleaned Data -> Wait Clean Data -> Load to PostgreSQL`
+![Dags Architecture](assets/Dags_Architecture.png)
+
+`PostgreSQL Database`
+
+![Database](assets/Database.png)
